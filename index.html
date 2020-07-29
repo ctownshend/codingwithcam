@@ -17,6 +17,7 @@
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
       crossorigin=""
     ></script>
+    <script src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
 
     <style>
       #mapid {
@@ -29,7 +30,7 @@
     <div id="mapid"></div>
 
     <script>
-      var mymap = L.map("mapid").setView([-34, 151], 11);
+      var mymap = L.map("mapid").setView([-34, 151], 3);
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {
@@ -43,6 +44,7 @@
             "pk.eyJ1IjoiY2FtZXJvbnRvd24iLCJhIjoiY2tidWh2Nmg3MDZwYjJybzVlY210cHJ6dSJ9.QniYTbnjYydQtbqC2M0Glg",
         }
       ).addTo(mymap);
+      var terminator = L.terminator().addTo(mymap);
     </script>
   </body>
 </html>
